@@ -23,6 +23,14 @@
                     :current="request()->routeIs('category.index')" wire:navigate>
                     {{ __('Category') }}
                 </flux:sidebar.item>
+                <flux:sidebar.item icon="tag" :href="route('transaction.index')"
+                    :current="request()->routeIs('transaction.index')" wire:navigate>
+                    {{ __('Transaction') }}
+                </flux:sidebar.item>
+                <flux:sidebar.item icon="tag" :href="route('transaction-details.index')"
+                    :current="request()->routeIs('transaction-details.index')" wire:navigate>
+                    {{ __('Transaction-details') }}
+                </flux:sidebar.item>
             </flux:sidebar.group>
         </flux:sidebar.nav>
 
