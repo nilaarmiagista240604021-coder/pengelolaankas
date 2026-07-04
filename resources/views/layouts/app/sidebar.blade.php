@@ -5,9 +5,9 @@
     @include('partials.head')
 </head>
 
-<body class="min-h-screen bg-white dark:bg-zinc-800">
+<body class="min-h-screen bg-pink-50 dark:bg-pink-950">
     <flux:sidebar sticky collapsible="mobile"
-        class="border-e border-zinc-200 bg-zinc-50 dark:border-zinc-700 dark:bg-zinc-900">
+        class="border-e border-pink-200 bg-pink-50 dark:border-pink-700 dark:bg-pink-900">
         <flux:sidebar.header>
             <x-app-logo :sidebar="true" href="{{ route('dashboard') }}" wire:navigate />
             <flux:sidebar.collapse class="lg:hidden" />
@@ -19,15 +19,15 @@
                     wire:navigate>
                     {{ __('Dashboard') }}
                 </flux:sidebar.item>
-                <flux:sidebar.item icon="tag" :href="route('category.index')"
+                <flux:sidebar.item icon="folder" :href="route('category.index')"
                     :current="request()->routeIs('category.index')" wire:navigate>
                     {{ __('Category') }}
                 </flux:sidebar.item>
-                <flux:sidebar.item icon="tag" :href="route('transaction.index')"
+                <flux:sidebar.item icon="banknotes" :href="route('transaction.index')"
                     :current="request()->routeIs('transaction.index')" wire:navigate>
                     {{ __('Transaction') }}
                 </flux:sidebar.item>
-                <flux:sidebar.item icon="tag" :href="route('transaction-details.index')"
+                <flux:sidebar.item icon="document-text" :href="route('transaction-details.index')"
                     :current="request()->routeIs('transaction-details.index')" wire:navigate>
                     {{ __('Transaction-details') }}
                 </flux:sidebar.item>
@@ -36,17 +36,7 @@
 
         <flux:spacer />
 
-        <flux:sidebar.nav>
-            <flux:sidebar.item icon="folder-git-2" href="https://github.com/laravel/livewire-starter-kit"
-                target="_blank">
-                {{ __('Repository') }}
-            </flux:sidebar.item>
-
-            <flux:sidebar.item icon="book-open-text" href="https://laravel.com/docs/starter-kits#livewire"
-                target="_blank">
-                {{ __('Documentation') }}
-            </flux:sidebar.item>
-        </flux:sidebar.nav>
+        
 
         <x-desktop-user-menu class="hidden lg:block" :name="auth()->user()->name" />
     </flux:sidebar>
