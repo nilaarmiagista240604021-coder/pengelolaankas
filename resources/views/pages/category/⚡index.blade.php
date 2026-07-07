@@ -94,10 +94,10 @@ new class extends Component
 
             <flux:table.columns>
                 <flux:table.column class="text-pink-600 font-semibold">No</flux:table.column>
-                <flux:table.column class="text-pink-600 font-semibold">ID</flux:table.column>
                 <flux:table.column class="text-pink-600 font-semibold">Name</flux:table.column>
                 <flux:table.column class="text-pink-600 font-semibold">Type</flux:table.column>
                 <flux:table.column class="text-pink-600 font-semibold">Description</flux:table.column>
+                <flux:table.column class="text-pink-600 font-semibold">Created At</flux:table.column>
                 <flux:table.column class="text-pink-600 font-semibold">Aksi</flux:table.column>
             </flux:table.columns>
 
@@ -106,10 +106,6 @@ new class extends Component
                     <flux:table.row :key="$category->id">
                         <flux:table.cell class="text-pink-700 font-medium">
                             {{ $loop->iteration }}
-                        </flux:table.cell>
-
-                        <flux:table.cell class="text-pink-700">
-                            {{ $category->id }}
                         </flux:table.cell>
 
                         <flux:table.cell class="text-pink-700 font-medium">
@@ -131,6 +127,12 @@ new class extends Component
                        <flux:table.cell class="text-zinc-600 max-w-xs whitespace-normal break-words">
                                     {{ $category->description ?? '-' }}
                        </flux:table.cell>
+
+                       <flux:table.cell class="text-zinc-600 whitespace-nowrap">
+                                    {{ $category->created_at ? $category->created_at->format('d M Y H:i') : '-' }}
+                       </flux:table.cell>
+
+                       
 
                         <flux:table.cell>
                             <flux:dropdown>
