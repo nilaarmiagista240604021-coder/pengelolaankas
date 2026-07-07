@@ -170,10 +170,7 @@ new class extends Component
                 <h3 class="text-lg font-bold mb-4">Tambah Kategori Baru</h3>
                 
                 <form wire:submit.prevent="store">
-                     <div class="mb-3">
-                        <label class="block text-sm mb-1">ID</label>
-                        <input type="text" wire:model="id" class="w-full border rounded p-2" required>
-                    </div>
+                   
                     <div class="mb-3">
                         <label class="block text-sm mb-1">Nama Kategori</label>
                         <input type="text" wire:model="name" class="w-full border rounded p-2" required>
